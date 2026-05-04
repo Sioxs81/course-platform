@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevPath — Plataforma de Cursos</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "@components/": "./js/components/",
+        "@modules/":    "./js/modules/",
+        "@data":        "./js/data.js"
+      }
+    }
+  </script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo">DevPath</span>
+        <div class="sidebar-controls">
+          <button id="search-toggle" class="icon-btn" title="Buscar tema" aria-label="Buscar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </button>
+          <button id="sidebar-toggle" class="icon-btn" title="Colapsar sidebar" aria-label="Colapsar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="search-bar" class="search-bar hidden">
+        <input type="text" id="search-input" placeholder="Buscar tema…" autocomplete="off" />
+      </div>
+      <div id="course-tree" class="course-tree"></div>
+      <pomodoro-timer></pomodoro-timer>
+    </aside>
+
+    <main id="main-content" class="main-content">
+      <div id="welcome-screen" class="welcome-screen">
+        <div class="welcome-inner">
+          <svg class="welcome-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="8" width="28" height="28" rx="3" fill="#6366f1" opacity="0.9"/>
+            <rect x="44" y="8" width="28" height="28" rx="3" fill="#ec4899" opacity="0.7"/>
+            <rect x="8" y="44" width="28" height="28" rx="3" fill="#ec4899" opacity="0.5"/>
+            <rect x="44" y="44" width="28" height="28" rx="3" fill="#6366f1" opacity="0.4"/>
+          </svg>
+          <h1>Selecciona un tema</h1>
+          <p>Elige cualquier bloque del árbol de habilidades para comenzar a aprender.</p>
+        </div>
+      </div>
+      <topic-viewer id="topic-viewer"></topic-viewer>
+    </main>
+  </div>
+</body>
+</html>
